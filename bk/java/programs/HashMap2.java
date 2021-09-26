@@ -15,8 +15,9 @@ public class HashMap2 {
 
         System.out.println(hashMap.size());
 
-        System.out.println(hashMap.toString());
-
+//        System.out.println("alex1 hashcode = " + alex1.hashCode());
+//        System.outs.println("alex2 hashcode = " + alex2.hashCode());
+//        System.out.println("Checking equality between alex1 and alex2 = " + alex1.equals(alex2));
     }
 }
 
@@ -48,7 +49,12 @@ class Student {
 
     @Override
     public boolean equals(Object obj) {
-        return true;
+        if (obj == null) return false;
+        if (!(obj instanceof Student))
+            return false;
+        if (obj == this)
+            return true;
+        return this.getId() == ((Student) obj).getId();
     }
 
     @Override
